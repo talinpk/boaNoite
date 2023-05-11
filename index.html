@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .botoes {
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    html, body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .fundo {
+        flex-direction: column;
+        background-color: rgb(146, 143, 143);
+    }
+    .sim button{
+        margin: 10px;
+        font-size: 50px;
+        background-color: green;
+    }
+    .link {
+        text-decoration: none;
+    }
+    .link:visited {
+        color: black;
+    }
+    .nao button{
+        position: relative;
+        margin: 10px;
+        font-size: 50px;
+        background-color: red;
+    }
+
+</style>
+<body class="fundo">
+    <div class="questionario">
+        <h1>Peitinho hoje?</h1>
+    </div>
+    <div class="botoes">
+        <div class="sim">
+            <button><a class="link" href="https://youtu.be/ksBHzjubfuM?t=35">Sim</a></button>
+        </div>
+        <div class="nao">
+            <button id="nao">Não</button>
+        </div>
+    </div>
+    <script>
+        var meuBotao = document.getElementById("nao");
+        meuBotao.addEventListener("mouseover", function() {
+            var novaPosicaoX = Math.floor(Math.random() * 400);
+            var novaPosicaoY = Math.floor(Math.random() * 200);
+            meuBotao.style.left = novaPosicaoX + "px";
+            meuBotao.style.top = novaPosicaoY + "px";
+        });
+    </script>
+</body>
+</html>
