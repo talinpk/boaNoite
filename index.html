@@ -5,62 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Livros Lidos</title>
     <style>
+        :root {
+            --cor1: #181818; /*preto da hotbar*/
+            --cor2: #025920; /* medio */
+            --cor3: #012626; /* escuro*/
+            --cor4: #72A684; /*verde claro*/
+        }
 
-        :root{
-        --cor1:#181818;   /*preto da hotbar*/ 
-        --cor2:#025920;    /* medio */
-        --cor3:#012626;    /* escuro*/
-        --cor4:#72A684;/*verde claro*/
-      
-}
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color:var(--cor4);
+            background-color: var(--cor4);
             color: #333;
             margin: 20px;
             text-align: center;
         }
+
         h1 {
             color: var(--cor1);
             padding-top: 10px;
-            
         }
+
         .livro-container {
             background-color: var(--cor4);
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            
+            justify-content: center;
+            gap: 20px;
         }
+
         .livro {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
             margin: 20px 10px;
             padding: 20px;
-            width: calc(33.33% - 20px);
+            width: calc(50% - 20px);
             box-sizing: border-box;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease-in-out;
+            position: relative;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
 
         .livro img {
-            max-width: 50%;
+            max-width: 100%;
             height: auto;
             border-radius: 5px;
-            margin-bottom: 10px;}
-        
+            margin-bottom: 10px;
+        }
+
         .livro:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         }
+
+        .detalhes {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            text-align: left;
+            width: 80%;
+        }
+
+        .livro:hover .detalhes {
+            opacity: 1;
+            transform: translateY(-50%);
+        }
+
         h2 {
             color: var(--cor3);
+            margin-bottom: 5px;
         }
+
         p {
             color: #181818;
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .livro {
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
@@ -70,27 +103,24 @@
 
     <div class="livro-container">
         <div class="livro">
-            <img src="Capitães_da_Areia.jpg" alt="">
-            <a href=""><h2>Capitães da areia</h2></a>
-            <p>Faz muito tempo que li, se passa na cidade de salvador e conta a história de meninos de rua que roubam para sobreviver, mas ao meio desses roubos e loucuras tem muita coisa que, ao menos para mim, despertou mais vontade de ler.   </p>
+            <div class="detalhes">
+                <h2>Capitães da areia</h2>
+                <p>Faz muito tempo que li, se passa na cidade de salvador e conta a história de meninos de rua que roubam para sobreviver, mas ao meio desses roubos e loucuras tem muita coisa que, ao menos para mim, despertou mais vontade de ler.   </p>
+            </div>
+            <img src="Capitães_da_Areia.jpg" alt="Capitães da Areia">
         </div>
+
+        
 
         <div class="livro">
             <img src="maus.jpg" alt="">
             <h2>Maus</h2>
             <p>Li recentemente indicação de anthunes, o livro é baseado em fatos, onde conta a história de um judeu que morava na Alemanha na época da 2 guerra, o narrador conta a história em 3 pessoa como se tivesse contato a história para o filho e então ele conta como foi esse período de transição de um pais "normal" para um pais nazista</p>
         </div>
-
         <div class="livro">
             <img src="Nemtodoamor.jpg" alt="">
             <h2>Nem todo amor tem um final feliz</h2>
             <p>O livro fala sobre términos, mas começa diferente não lembro ao certo, mas é um livro bem atual, o que me marcou é que ele é um escrito brasileiro e se identifiquei com muitas coisas que ele conta, então esse é um dos meus melhores livro mesmo ele falando sobre romance, Sim, eu odeio livro e série de romance</p>
-        </div>
-
-        <div class="livro">
-            <img src="revolução.jpg" alt="">
-            <h2>Revolução dos bichos</h2>
-            <p>Tbm Faz muito tempo que li, então terá poucos detalhes, fala é uma sátira sobre a ditadura stalinista, onde animais falam e têm sentimentos e afins... mas no resumo cada personagem é uma reinterpretação de algo, eles vão se revoltar e tal, mas é um livro inclusive tenho que reler.</p>
         </div>
 
         <div class="livro">
@@ -100,11 +130,17 @@
         </div>
 
         <div class="livro">
+            <img src="revolução.jpg" alt="">
+            <h2>Revolução dos bichos</h2>
+            <p>Tbm Faz muito tempo que li, então terá poucos detalhes, fala é uma sátira sobre a ditadura stalinista, onde animais falam e têm sentimentos e afins... mas no resumo cada personagem é uma reinterpretação de algo, eles vão se revoltar e tal, mas é um livro inclusive tenho que reler.</p>
+        </div>
+
+
+        <div class="livro">
             <img src="umabreve.jpg" alt="">
             <h2>Uma breve historia do tempo</h2>
             <p>Livro que envolve muita física sem cálculos, a famosa física teórica que eu particularmente gosto de ler, o livro em si aborda de forma simples e leve termos complexos de astrofísica, onde Stephen tenta "unificar" a grandeza das galaxias com a física quântica.  </p>
         </div>
-        
 
         <!-- Adicione mais divs .livro conforme necessário -->
     </div>
