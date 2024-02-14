@@ -1,94 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boa noite </title>
-    <link rel="shortcut icon" href="./cor.png">
-</head>
-<style>
+    <title>Meus Livros Lidos</title>
+    <style>
 
-    #conteiner {
-            height: 98vh;
-            background-image: url('Screenshot_1.png');
-            
-            background-size: cover;
-            padding: 5px;
-            background-repeat:no-repeat;
+        :root{
+        --cor1:#181818;   /*preto da hotbar*/ 
+        --cor2:#025920;    /* medio */
+        --cor3:#012626;    /* escuro*/
+        --cor4:#72A684;/*verde claro*/
+      
+}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ecf3ef;
+            color: #333;
+            margin: 20px;
+            text-align: center;
         }
+        h1 {
+            color: var(--cor1);
+        }
+        .livro-container {
+            background-color: var(--cor4);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
             
-    .botoes {
-        flex-direction: row;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        border-radius:10px ;
-    }
-    html, body {
-        display: flex;
-        justify-content: center;
-        align-items: center ;
-        height: 100%;
-    }
-    .fundo {
-        flex-direction: column;
-        background-color: rgb(202, 84, 231);
-    }
-    .sim button{
-        margin: 10px;
-        font-size: 50px;
-        background-color: green;
-        border-radius:10px ;
-        border: none;
-        box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
+        }
+        .livro {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 10px;
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
 
-    }
-    .link {
-        text-decoration: none;
-    }
-    .link:visited {
-        color: black;
-    }
-    .nao button{
-        position: relative;
-        margin: 10px;
-        font-size: 50px;
-        background-color: red;
-        border-radius:10px ;
-        border: none;
-        box-shadow: 10px 10px 31px 0px rgba(0,0,0,0.75);
-    
+        .livro img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;}
+        
+        .livro:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: var(--cor3);
+        }
+        p {
+            color: #181818;
+        }
+    </style>
+</head>
+<body>
 
-    }
-    .questionario{
-        color: rgb(225, 0, 255);
-        font-size: 50px;
-        padding: 3px;
+    <h1>Fav Livros</h1>
 
-    }
-</style>
-<body id="conteiner" class="fundo">
-    <div class="questionario">
-        <h1>Bo joga ?</h1>
-    </div>
-    <div class="botoes">
-        <div class="sim">
-            <button><a class="link" href="https://youtu.be/ksBHzjubfuM?t=35">Sim</a></button>
+    <div class="livro-container">
+        <div class="livro">
+            <img src="Capitães_da_Areia.jpg" alt="">
+            <h2>Capitães da areia</h2>
+            <p>Resumo breve do livro 1...</p>
         </div>
-        <div class="nao">
-            <button id="nao">Não</button>
+
+        <div class="livro">
+            <img src="maus.jpg" alt="">
+            <h2>Capitães da areia</h2>
+            <p>Resumo breve do livro 1...</p>
         </div>
+
+        <div class="livro">
+            <img src="Nemtodoamor.jpg" alt="">
+            <h2>Capitães da areia</h2>
+            <p>Resumo breve do livro 1...</p>
+        </div>
+
+        <div class="livro">
+            <img src="revolução.jpg" alt="">
+            <h2>Capitães da areia</h2>
+            <p>Resumo breve do livro 1...</p>
+        </div>
+
+        <div class="livro">
+            <img src="todasflores.jpg" alt="">
+            <h2>Capitães da areia</h2>
+            <p>Resumo breve do livro 1...</p>
+        </div>
+
+        <div class="livro">
+            <img src="umabreve.jpg" alt="">
+            <h2>Capitães da areia</h2>
+            <p>Resumo breve do livro 1...</p>
+        </div>
+        
+
+        <!-- Adicione mais divs .livro conforme necessário -->
     </div>
-    <script>
-        var meuBotao = document.getElementById("nao");
-        meuBotao.addEventListener("mouseover", function() {
-            var novaPosicaoX = Math.floor(Math.random() * 200);
-            var novaPosicaoY = Math.floor(Math.random() * 100);
-            meuBotao.style.left = novaPosicaoX + "px";
-            meuBotao.style.top = novaPosicaoY + "px";
-        });
-    </script>
+
 </body>
 </html>
